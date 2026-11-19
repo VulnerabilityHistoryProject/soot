@@ -1,0 +1,23 @@
+name: PyPI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # Runner OS (ubuntu-latest, windows-latest, macos-latest)
+
+    steps:
+      # Check out your repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Run a shell command
+      - name: Run a script
+        run: |
+          echo "Building project..."
+          echo "Running tests..."
